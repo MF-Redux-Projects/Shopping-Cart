@@ -1,8 +1,7 @@
 import {LOADED} from "./action-types";
 
-export const loaded = (products) => {
+export const loaded = () => {
     return {
-        type: LOADED,
-        products
+        type: LOADED
     }
 }

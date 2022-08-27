@@ -22,9 +22,12 @@ const initialState = [
 ];
 
 const productReducer = (state = initialState, action) => {
+    console.log(action);
     switch (action.type) {
         case LOADED:
-            return action.products;
+            return state;
+        default:
+            return state;
     }
 }
 
