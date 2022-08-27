@@ -5,19 +5,19 @@ const initialState = [
         id: 1,
         name: "Asus Vivobook X515MA",
         price: "35,500",
-        stock: 3,
+        stock: 5,
     },
     {
         id: 2,
         name: "Dell E1916HV 18.5 Inch",
         price: "9,300",
-        stock: 35,
+        stock: 10,
     },
     {
         id: 3,
         name: "Canon Eos 4000D 18MP",
         price: "40,500",
-        stock: 50,
+        stock: 10,
     },
 ];
 

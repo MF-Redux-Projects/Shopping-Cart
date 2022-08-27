@@ -7,7 +7,6 @@ const StockChecker = store => next => action => {
         const productId = action.type === ADDCART ? action.product.id : action.productID;
         const product = state.products.find(product => product.id === productId);
         if (product.stock <= 0){
-            console.log("Sorry, we are out of stock!");
             return;
         }
     }
