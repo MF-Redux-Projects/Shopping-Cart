@@ -1,7 +1,15 @@
-import {LOADED} from "./action-types";
+import {INCREMENT, DECREMENT} from "./action-types";
 
-export const loaded = () => {
+export const increment = (productID) => {
     return {
-        type: LOADED
+        type: INCREMENT,
+        productID
+    }
+}
+
+export const decrement = (productID) => {
+    return {
+        type: DECREMENT,
+        productID
     }
 }

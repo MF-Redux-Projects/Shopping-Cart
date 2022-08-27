@@ -1,4 +1,4 @@
-import {LOADED} from "./action-types";
+import {INCREMENT, DECREMENT} from "./action-types";
 
 const initialState = [
     {
@@ -22,10 +22,25 @@ const initialState = [
 ];
 
 const productReducer = (state = initialState, action) => {
-    console.log(action);
     switch (action.type) {
-        case LOADED:
-            return state;
+        case INCREMENT:
+            //stock increase
+            return [
+                ...state,
+                {
+                    ...state.find((product) => product.id === action.productID),
+                    stock: state.find((product) => product.id === action.productID).stock + 1,
+                }
+            ]
+        case DECREMENT:
+            //stock decrease
+            return [
+                ...state,
+                {
+                    ...state.find((product) => product.id === action.productID),
+                    stock: state.find((product) => product.id === action.productID).stock - 1,
+                }
+            ]
         default:
             return state;
     }

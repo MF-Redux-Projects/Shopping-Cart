@@ -1,10 +1,9 @@
 import React from 'react';
-import {useSelector, useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 import CartItem from "./CartItem";
 
 const Cart = () => {
     const cartItems = useSelector((state) => state.cart);
-    const dispatch = useDispatch();
 
     const cartTotalAmount = cartItems.reduce(
         (accumalatedCount, cartItem) =>
@@ -27,7 +26,7 @@ const Cart = () => {
                 <div className="flex justify-center items-center text-center">
                     <div className="text-xl font-semibold">
                         <p>Total Item</p>
-                        <p className="text-5xl">0</p>
+                        <p className="text-5xl">{cartTotalItem}</p>
                     </div>
                 </div>
             </div>
@@ -37,7 +36,7 @@ const Cart = () => {
                 >
                     <div className="text-xl font-semibold">
                         <p>Total Price</p>
-                        <p className="text-5xl">0</p>
+                        <p className="text-5xl">{cartTotalAmount}</p>
                     </div>
                 </div>
             </div>
