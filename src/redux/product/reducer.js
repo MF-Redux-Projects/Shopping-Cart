@@ -21,11 +21,11 @@ const initialState = [
     },
 ];
 
-const reducer = (state = initialState, action) => {
+const productReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOADED:
             return action.products;
     }
 }
 
-export default reducer;
+export default productReducer;
