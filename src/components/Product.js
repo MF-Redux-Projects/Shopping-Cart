@@ -1,6 +1,12 @@
-import React from 'react';
+import {useDispatch} from "react-redux";
+import {addCart} from "../redux/cart/actions";
 
 const Product = ({product}) => {
+    const dispatch = useDispatch();
+
+    const handleAddCart = () => {
+        dispatch(addCart(product));
+    }
     return (
         <div className="bg-white py-4 px-4 shadow-md rounded-lg my-4 mx-4">
             <div className="flex justify-between px-4 items-center">
@@ -11,6 +17,7 @@ const Product = ({product}) => {
                 <div className="text-lg font-semibold">
                     <button
                         className="focus:outline-none bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-2 rounded-full inline-flex items-center"
+                        onClick={handleAddCart}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

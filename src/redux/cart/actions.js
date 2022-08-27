@@ -3,13 +3,13 @@ import {ADDCART, REMOVECART} from "./action-types";
 export const addCart = (product) => {
     return {
         type: ADDCART,
-        payload: product,
+        product,
     };
 }
 
 export const removeCart = (product) => {
     return {
         type: REMOVECART,
-        payload: product,
+        product,
     };
 }

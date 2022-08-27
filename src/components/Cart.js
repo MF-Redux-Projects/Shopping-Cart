@@ -1,9 +1,20 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import CartItem from "./CartItem";
 
 const Cart = () => {
     const cartItems = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+
+    const cartTotalAmount = cartItems.reduce(
+        (accumalatedCount, cartItem) =>
+            accumalatedCount + cartItem.quantity * cartItem.price.replace(",", ""),
+        0
+    );
+    const cartTotalItem = cartItems.reduce(
+        (accumalatedCount, cartItem) => accumalatedCount + cartItem.quantity,
+        0
+    );
 
     return (
         <div className="col-span-12 sm:col-span-12 md:col-span-5 lg:col-span-4 xxl:col-span-4">

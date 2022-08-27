@@ -1,10 +1,10 @@
 import React from 'react';
 
-const CartItem = () => {
+const CartItem = ({cartItem}) => {
     return (
         <div className="flex justify-between border-b-2 mb-2">
             <div className="text-lg py-2">
-                <p>Asus Vivobook X515MA</p>
+                <p>{cartItem.name}</p>
             </div>
             <div className="text-lg py-2">
                 <div
@@ -25,7 +25,7 @@ const CartItem = () => {
                             />
                         </svg>
                     </button>
-                    <p>0</p>
+                    <p>{cartItem.quantity}</p>
                     <button
                         className="focus:outline-none bg-purple-700 hover:bg-purple-800 text-white font-bold py-1 px-1 rounded-full inline-flex items-center"
                     >
