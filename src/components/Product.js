@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Product = () => {
+const Product = ({product}) => {
     return (
         <div className="bg-white py-4 px-4 shadow-md rounded-lg my-4 mx-4">
             <div className="flex justify-between px-4 items-center">
                 <div className="text-lg font-semibold">
-                    <p>Asus Vivobook X515MA (20)</p>
-                    <p className="text-gray-400 text-base">Tk 35,500</p>
+                    <p>{product.name} ({product.stock})</p>
+                    <p className="text-gray-400 text-base">Tk {product.price}</p>
                 </div>
                 <div className="text-lg font-semibold">
                     <button
