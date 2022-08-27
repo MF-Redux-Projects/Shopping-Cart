@@ -1,11 +1,14 @@
 import {useDispatch} from "react-redux";
 import {addCart} from "../redux/cart/actions";
+import {decrement} from "../redux/product/actions";
 
 const Product = ({product}) => {
     const dispatch = useDispatch();
 
     const handleAddCart = () => {
         dispatch(addCart(product));
+
+        dispatch(decrement(product.id));
     }
     return (
         <div className="bg-white py-4 px-4 shadow-md rounded-lg my-4 mx-4">

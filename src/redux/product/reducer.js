@@ -24,23 +24,25 @@ const initialState = [
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT:
-            //stock increase
-            return [
-                ...state,
-                {
-                    ...state.find((product) => product.id === action.productID),
-                    stock: state.find((product) => product.id === action.productID).stock + 1,
+            return state.map(product => {
+                if (product.id === action.productID) {
+                    return {
+                        ...product,
+                        stock: product.stock + 1
+                    }
                 }
-            ]
+                return product;
+            })
         case DECREMENT:
-            //stock decrease
-            return [
-                ...state,
-                {
-                    ...state.find((product) => product.id === action.productID),
-                    stock: state.find((product) => product.id === action.productID).stock - 1,
+            return state.map(product => {
+                if (product.id === action.productID) {
+                    return {
+                        ...product,
+                        stock: product.stock - 1,
+                    }
                 }
-            ]
+                return product;
+            });
         default:
             return state;
     }
